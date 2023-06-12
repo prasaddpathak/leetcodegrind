@@ -9,10 +9,6 @@ class MinStack:
         heapq.heappush(self.heap, val)
         
     def pop(self) -> None:
-        # if not self.stack: return None
-        print(self.stack)
-        print(self.heap)
-        print('---------')
         self.stack.pop()
         self.heap = self.stack.copy()
         
@@ -21,7 +17,6 @@ class MinStack:
         return self.stack[-1]
 
     def getMin(self) -> int:
-        # if not self.heap: return -1
         return heapq.nsmallest(1,self.heap)[0]
         
 
